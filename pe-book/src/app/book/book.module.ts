@@ -7,7 +7,6 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 
 
-
 @NgModule({
   declarations: [DetailComponent],
   imports: [
@@ -16,6 +15,7 @@ import {HttpClientModule} from '@angular/common/http';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
+
   ]
 })
 export class BookModule { }

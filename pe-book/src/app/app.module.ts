@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-
+import { NgxPayPalModule } from 'ngx-paypal';
 @NgModule({
   declarations: [
     AppComponent
@@ -16,6 +16,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
+    NgxPayPalModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

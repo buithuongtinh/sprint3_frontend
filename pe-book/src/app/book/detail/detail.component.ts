@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Book} from '../../model/book';
 import {BookService} from '../../service/book.service';
 import {ActivatedRoute} from '@angular/router';
+import {CartService} from '../../service/cart.service';
 
 @Component({
   selector: 'app-detail',
@@ -12,7 +13,10 @@ export class DetailComponent implements OnInit {
   book: Book;
   id: number;
 
-  constructor(private bookService: BookService, private active: ActivatedRoute) {
+  constructor(
+    private bookService: BookService,
+    private active: ActivatedRoute,
+    private cartService: CartService) {
   }
 
   ngOnInit(): void {
@@ -27,5 +31,9 @@ export class DetailComponent implements OnInit {
       this.book = value;
       console.log(this.book);
     });
+  }
+
+  addToCart(item: any) {
+    this.cartService.addToCart(item);
   }
 }

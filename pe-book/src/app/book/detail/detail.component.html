@@ -1,28 +1,4 @@
-<!-- Header -->
-<div id="header" class="shell">
-  <div id="logo"><h1><a href="#" routerLink="/homepage">BestSeller</a></h1></div>
-  <!-- Navigation -->
-  <div id="navigation">
-    <ul>
-      <li><a href="#" routerLink="/homepage">Trang chủ</a></li>
-      <li><a href="#">Sản phẩm</a></li>
-      <li><a href="#">Khuýên mãi</a></li>
-      <li><a href="#">Hồ sơ</a></li>
-      <li><a href="#">Liên hệ</a></li>
-    </ul>
-  </div>
-  <!-- End Navigation -->
-  <div class="cl">&nbsp;</div>
-  <!-- Login-details -->
-  <div id="login-details">
-    <p><a href="#"  routerLink="/login" >Đăng nhập  </a> </p>
-    <p><a href="#" routerLink="/cart/shop" class="cart" >
-       <img src="../../../assets/images/cart-icon.png" alt=""/> </a> Giỏ hàng</p>
-  </div>
-  <!-- End Login-details -->
-</div>
-<!-- End Header -->
-<!-- Slider -->
+
 <div id="main" class="shell">
 
   <div id="content">
@@ -106,7 +82,7 @@
             <br>
             <br>
             <div>
-              <button type="submit" class="btn btn-danger mr-sm-4">Thêm vào giỏ hàng</button>
+              <button type="submit"routerLink="/cart/shop" class="btn btn-danger mr-sm-4" (click)="addToCart(book)">Thêm vào giỏ hàng</button>
               <button type="submit" class="btn btn-success ">Mua Hàng</button>
             </div>
           </div>
@@ -252,7 +228,7 @@
       </section>
     </div>
     <!-- End Best-sellers -->
-  </div>
+
   <!-- End Content -->
   <div class="cl">&nbsp;</div>
 </div>
@@ -261,73 +237,73 @@
 <!-- Main -->
 
 
-<div style="width: 65%;margin-left: 240px">
-  <footer class="bg-secondary text-white text-center text-lg-start ">
-    <!-- Grid container -->
-    <div class="container p-4">
-      <!--Grid row-->
-      <div class="row">
-        <!--Grid column-->
-        <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-          <h5 class="text-uppercase">Về BestSellers</h5>
+<!--<div style="width: 65%;margin-left: 240px">-->
+<!--  <footer class="bg-secondary text-white text-center text-lg-start ">-->
+<!--    &lt;!&ndash; Grid container &ndash;&gt;-->
+<!--    <div class="container p-4">-->
+<!--      &lt;!&ndash;Grid row&ndash;&gt;-->
+<!--      <div class="row">-->
+<!--        &lt;!&ndash;Grid column&ndash;&gt;-->
+<!--        <div class="col-lg-6 col-md-12 mb-4 mb-md-0">-->
+<!--          <h5 class="text-uppercase">Về BestSellers</h5>-->
 
-          <p>
-            BestSeller là một trang thương mại điện từ.Đến với không gian mua sắm trực tuyến BestSeller,
-            khách hàng có thể dễ dàng tìm thấy những cuốn sách hay, đa thể loại của nhiều nhà xuất bản,
-            công ty sách trong và ngoài nước , chính hãng và uy tín.
-          </p>
-        </div>
-        <!--Grid column-->
+<!--          <p>-->
+<!--            BestSeller là một trang thương mại điện từ.Đến với không gian mua sắm trực tuyến BestSeller,-->
+<!--            khách hàng có thể dễ dàng tìm thấy những cuốn sách hay, đa thể loại của nhiều nhà xuất bản,-->
+<!--            công ty sách trong và ngoài nước , chính hãng và uy tín.-->
+<!--          </p>-->
+<!--        </div>-->
+<!--        &lt;!&ndash;Grid column&ndash;&gt;-->
 
-        <!--Grid column-->
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase">Cửa hàng</h5>
+<!--        &lt;!&ndash;Grid column&ndash;&gt;-->
+<!--        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">-->
+<!--          <h5 class="text-uppercase">Cửa hàng</h5>-->
 
-          <ul class="list-unstyled mb-0">
-            <li>
-              <a href="#!" class="text-white">Trang chủ</a>
-            </li>
-            <li>
-              <a href="#!" class="text-white">Ưu đãi đặt biệt</a>
-            </li>
-            <li>
-              <a href="#!" class="text-white">Đăng nhập</a>
-            </li>
-            <li>
-              <a href="#!" class="text-white">Giỏ hàng</a>
-            </li>
-          </ul>
-        </div>
-        <!--Grid column-->
+<!--          <ul class="list-unstyled mb-0">-->
+<!--            <li>-->
+<!--              <a href="#!" class="text-white">Trang chủ</a>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--              <a href="#!" class="text-white">Ưu đãi đặt biệt</a>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--              <a href="#!" class="text-white">Đăng nhập</a>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--              <a href="#!" class="text-white">Giỏ hàng</a>-->
+<!--            </li>-->
+<!--          </ul>-->
+<!--        </div>-->
+<!--        &lt;!&ndash;Grid column&ndash;&gt;-->
 
-        <!--Grid column-->
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase mb-0">Hỗ trợ</h5>
+<!--        &lt;!&ndash;Grid column&ndash;&gt;-->
+<!--        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">-->
+<!--          <h5 class="text-uppercase mb-0">Hỗ trợ</h5>-->
 
-          <ul class="list-unstyled">
-            <li>
-              <a href="#!" class="text-white">Câu Hỏi</a>
-            </li>
-            <li>
-              <a href="#!" class="text-white">Chính Sách</a>
-            </li>
-            <li>
-              <a href="#!" class="text-white">Quy Định</a>
-            </li>
-            <li>
-              <a href="#!" class="text-white">Trả Hàng</a>
-            </li>
-          </ul>
-        </div>
-        <!--Grid column-->
-      </div>
-      <!--Grid row-->
-    </div>
+<!--          <ul class="list-unstyled">-->
+<!--            <li>-->
+<!--              <a href="#!" class="text-white">Câu Hỏi</a>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--              <a href="#!" class="text-white">Chính Sách</a>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--              <a href="#!" class="text-white">Quy Định</a>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--              <a href="#!" class="text-white">Trả Hàng</a>-->
+<!--            </li>-->
+<!--          </ul>-->
+<!--        </div>-->
+<!--        &lt;!&ndash;Grid column&ndash;&gt;-->
+<!--      </div>-->
+<!--      &lt;!&ndash;Grid row&ndash;&gt;-->
+<!--    </div>-->
 
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-      © 2020 Copyright:
-      <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-    </div>
+<!--    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">-->
+<!--      © 2020 Copyright:-->
+<!--      <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>-->
+<!--    </div>-->
 
-  </footer>
-</div>
+<!--  </footer>-->
+<!--</div>-->

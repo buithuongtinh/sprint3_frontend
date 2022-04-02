@@ -5,10 +5,11 @@ import { HomepageRoutingModule } from './homepage-routing.module';
 import { HomeComponent } from './home/home.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { InfoComponent } from './info/info.component';
 
 
 @NgModule({
-  declarations: [HomeComponent],
+  declarations: [HomeComponent, InfoComponent],
   imports: [
     CommonModule,
     HomepageRoutingModule,

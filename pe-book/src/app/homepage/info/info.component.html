@@ -1,107 +1,52 @@
+
 <div id="main" class="shell">
 
   <div id="content">
-    <h3 style="text-align: center">Giỏ Hàng</h3>
+    <h3 style="text-align: center">Thông tin cá nhân</h3>
     <br>
-    <ng-container *ngIf="products.length != 0">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-lg-12">
-            <table class="table ">
-              <thead>
-              <tr>
-                <th class="thtable" scope="col" colspan="2">Stt</th>
-                <th class="thtable" style="width: 25%;" scope="col">Tên sách</th>
-                <th class="thtable" style="width: 12%;" scope="col">Đơn giá</th>
-                <th class="thtable" style="width: 15%;" scope="col">Số lượng</th>
-                <th class="thtable" style="width: 15%;" scope="col">Thành tiền</th>
-                <th scope="col">
-                  <!--                <span class="badge bg-danger">-->
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                       class="bi bi-trash" viewBox="0 0 16 16">
-                    <path
-                      d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-                    <path fill-rule="evenodd"
-                          d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
-                  </svg>
-                  <!--                </span>-->
-                </th>
+    <div class="row">
+      <div class="col-lg-12" >
 
-              </tr>
-              </thead>
-              <tbody>
-              <tr *ngFor="let book1 of products; let i = index">
-                <td>{{i + 1}}</td>
-                <td><img src="{{book1.image}}" alt="" style="width: 100px"></td>
-                <td>{{book1.name}} </td>
-                <td>{{book1.price}}</td>
-                <td>{{book1.quantity}}</td>
-                <td><span style="color: red">{{book1.total}}</span></td>
-                <td>
-                  <button (click)=" removeItem(book1)" class="btn btn-danger">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                         class="bi bi-trash" viewBox="0 0 16 16">
-                      <path
-                        d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-                      <path fill-rule="evenodd"
-                            d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
-                    </svg>
-                  </button>
-                </td>
-              </tr>
-              </tbody>
-            </table>
-          </div>
-
-        </div>
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="card" style="width: 100%;">
-              <div class="card-body">
-                <a class="card-subtitle mb-2 text-muted">Địa chỉ</a>
-                <a style="float: right" href="#" class="card-link">Thay đổi</a>
-                <p style="font-weight: bold" class="card-title">Bùi Thường Tính | 0799596322</p>
-                <p class="card-text">132 nguyễn lương bằng, Phường Hòa Khánh Bắc, Quận Liên Chiểu, Đà
-                  Nẵng</p>
-
-                <hr>
-                <a>Tạm tính :</a>
-                <a style="float: right">{{grandTotal | number }} đ </a>
-                <br>
-                <a>Giảm giá :</a>
-                <a style="float: right">0 đ </a>
-                <hr>
-                <a>Tổng cộng</a>
-                <a style="float: right ; color: red ; font-size: 20px">{{grandTotal | number}} đ</a>
-
-                <br>
-                <br>
-                <div style="float: right ">
-                  <button (click)="emptycart()" type="button" class="btn btn-danger  mr-sm-4">Xóa tất cả</button>
-                  <button routerLink="/" type="button" class="btn btn-primary  mr-sm-4">Xem thêm</button>
-                  <button (click)="show()" type="submit" class="btn btn-success ">Mua ngay</button>
-                </div>
-
-                <br><br>
-                <div *ngIf="check">
-                  <ngx-paypal  [config]="payPalConfig"></ngx-paypal>
-                </div>
-              </div>
-            </div>
-            <div>
-            </div>
-          </div>
-        </div>
+        <table class="table table-borderless "   >
+          <thead>
+          <tr>
+            <td>Họ và tên: </td>
+            <td>{{info.name}}</td>
+          </tr>
+          <tr>
+            <td>Giới tính: </td>
+            <td
+              [ngSwitch]="info.gender">
+              <span *ngSwitchCase="0">Nữ</span>
+              <span *ngSwitchCase="1">Nam</span>
+              <span *ngSwitchDefault>Giới tính thứ 3</span>
+            </td>
+          </tr>
+          <tr>
+            <td>Tên đăng nhập: </td>
+            <td>{{info.username}}</td>
+          </tr>
+          <tr>
+          <td>Ngày sinh: </td>
+            <td>{{info.birthday}}</td>
+          </tr>
+          <tr>
+            <td>Số điện Thoại: </td>
+            <td>{{info.phone}}</td>
+          </tr>
+          <tr>
+            <td>Email:</td>
+            <td>{{info.email}}</td>
+          </tr>
+          <tr>
+            <td>Địa chỉ:</td>
+            <td>{{info.address}}</td>
+          </tr>
+          </thead>
+        </table>
       </div>
+    </div>
 
-    </ng-container>
-    <ng-container *ngIf="products.length == 0">
-      <div style="text-align: center">
-        <img src="https://bizweb.dktcdn.net/100/368/179/themes/738982/assets/empty-cart.png?1609300798440" alt="">
-        <h6>Thêm sách vào giỏ hàng ngay </h6>
-        <button routerLink="/" class="btn btn-primary">Xem shop</button>
-      </div>
-    </ng-container>
     <div class="cl">&nbsp;</div>
 
 
@@ -241,6 +186,3 @@
   <!-- End Content -->
   <div class="cl">&nbsp;</div>
 </div>
-
-<!-- End Slider -->
-<!-- Main -->
